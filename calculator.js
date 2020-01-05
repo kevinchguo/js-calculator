@@ -7,10 +7,9 @@
  */
 
 function calculatorModule() {
-
-    var memory = 0;
-    var total = 0;
-    var calculator = {}
+  var memory = 0;
+  var total = 0;
+  var calculator = {};
 
   /**
    * sets the `total` to the number passed in
@@ -18,97 +17,93 @@ function calculatorModule() {
    * @return { Number }    current total
    */
 
-    calculator.load = function (x) {
-        this.validations(x)
-        total = x;
-        return total;
-    }
+  calculator.load = function(x) {
+    this.validations(x);
+    total = x;
+    return total;
+  };
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
 
-    calculator.getTotal = function() {
-        return total;
-    }
+  calculator.getTotal = function() {
+    return total;
+  };
 
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
    */
 
-    calculator.add = function(x) {
-        this.validations(x)
-        total += x;
-    }
+  calculator.add = function(x) {
+    this.validations(x);
+    total += x;
+  };
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
 
-   calculator.subtract = function(x) {
-        this.validations(x)
-        total -= x;
-   }
+  calculator.subtract = function(x) {
+    this.validations(x);
+    total -= x;
+  };
 
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
 
-   calculator.multiply = function(x) {
-        this.validations(x)   
-        total *= x;
-   }
+  calculator.multiply = function(x) {
+    this.validations(x);
+    total *= x;
+  };
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
 
-    calculator.divide = function(x) {
-        this.validations(x)
-        total /= x;
-    }
+  calculator.divide = function(x) {
+    this.validations(x);
+    total /= x;
+  };
 
   /**
    * Return the value stored at `memory`
    * @return { Number }
    */
 
-   calculator.recallMemory = function() {
-       return memory;
-   }
+  calculator.recallMemory = function() {
+    return memory;
+  };
 
   /**
    * Stores the value of `total` to `memory`
    */
 
-   calculator.saveMemory = function() {
-        memory = total;
-   }
+  calculator.saveMemory = function() {
+    memory = total;
+  };
 
   /**
    * Clear the value stored at `memory`
    */
-   calculator.clearMemory = function() {
-       memory = 0;
-   }
+  calculator.clearMemory = function() {
+    memory = 0;
+  };
   /**
    * Validation
    */
 
-   calculator.validations = function(x) {
-       if (typeof x !== "number") {
-           return "Error"
-       }
-   }
+  calculator.validations = function(x) {
+    if (typeof x !== "number") {
+      return "Error";
+    }
+  };
 
-
-   return calculator;
+  return calculator;
 }
-console.log(calculatorModule().load(5))
-console.log(calculatorModule().add(763))
-console.log(calculatorModule().recallMemory())
